@@ -5,22 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp" >
-
     <LinearLayout
         android:id="@+id/left_layout"
+        android:layout_marginTop="3dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:background="@drawable/circle" >
-
-        <TextView
-            android:id="@+id/left_msg"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/headPic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="3dp"
+            android:src="@mipmap/people1" />
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            tools:text="232362632626" />
+            android:layout_gravity="start"
+            android:padding="5dp"
+            android:background="@drawable/circle" >
 
+            <TextView
+                android:id="@+id/left_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                tools:text="232362632626" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -28,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:padding="5dp"
         android:background="@drawable/circle" >
 
         <TextView

@@ -20,7 +20,6 @@ import java.util.List;
 
 public class ImgAdapter extends ArrayAdapter<Img> {
     private int resourceId;
-    ImageButton good;
     public ImgAdapter(Context context, int resourceId, List<Img> objects) {
         super(context, resourceId, objects);
         this.resourceId=resourceId;
@@ -46,6 +45,7 @@ public class ImgAdapter extends ArrayAdapter<Img> {
         ImageView  headPic=viewHolder.headPic;
         ImageView imgContent=viewHolder.imgcontent;
         name.setText(people.getName());
+        final ImageButton good;
         good= viewHolder.good;
         good.setOnClickListener(new View.OnClickListener() {
             @Override
