@@ -6,4 +6,7 @@
     <color name="colorAccent">#161415</color>
     <color name="blue">#2187EB</color>
     <color name="grey">#eeeeee</color>
+    <color name="button_blue">#2d8cf0</color>
+    <color name="line_grey">#e0e0e0</color>
+    <color name="text_grey">#7c7c7c</color>
 </resources>

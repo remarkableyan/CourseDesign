@@ -25,12 +25,16 @@ public class ChatActivity extends AppCompatActivity {
 
     private MsgAdapter adapter;
     private ImageButton backbtn;
+    private Intent resultIntent;
+    private String name;
+    private int headPic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_layout);
         Intent intent=getIntent();
-        String name=intent.getStringExtra("name");
+        name=intent.getStringExtra("name");
+        headPic=intent.getIntExtra("headPic",R.mipmap.people1);
         initMsgs(); // 初始化消息数据
         backbtn=findViewById(R.id.backbtn);
         inputText = (EditText) findViewById(R.id.input_text);
@@ -40,9 +44,11 @@ public class ChatActivity extends AppCompatActivity {
         msgRecyclerView = (RecyclerView) findViewById(R.id.msg_recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         msgRecyclerView.setLayoutManager(layoutManager);
-        adapter = new MsgAdapter(msgList);
+        adapter = new MsgAdapter(msgList,headPic);
         msgRecyclerView.setAdapter(adapter);
         ImageButton backbtn=findViewById(R.id.backbtn);
+        resultIntent=new Intent();
+        resultIntent.putExtra("name",name);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +60,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String content = inputText.getText().toString();
                 if (!"".equals(content)) {
+                    resultIntent.putExtra("content",content);
                     Msg msg = new Msg(content, Msg.TYPE_SENT);
                     msgList.add(msg);
                     adapter.notifyItemInserted(msgList.size() - 1); // 当有新消息时，刷新ListView中的显示
@@ -62,7 +69,7 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
-
+        setResult(RESULT_OK,resultIntent);
     }
     private void initMsgs() {
         Msg msg1 = new Msg("Hello guy.", Msg.TYPE_RECEIVED);

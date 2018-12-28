@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
         app:overlay="false"
-        app:wave_color="#69ACEE"
+        app:wave_color="@color/line_grey"
         app:wave_height_type="normal"
         app:wave_show="true">
 

@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">CourseDesign</string>
-
+    <string name="app_name">Instagram?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">首页</string>

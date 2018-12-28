@@ -9,10 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
 
     private List<Msg> mMsgList;
-
+    private int headPicId;
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         LinearLayout leftLayout;
@@ -22,6 +24,7 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
         TextView leftMsg;
 
         TextView rightMsg;
+        CircleImageView headPic;
 
         public ViewHolder(View view) {
             super(view);
@@ -29,10 +32,12 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
             rightLayout = (LinearLayout) view.findViewById(R.id.right_layout);
             leftMsg = (TextView) view.findViewById(R.id.left_msg);
             rightMsg = (TextView) view.findViewById(R.id.right_msg);
+            headPic=view.findViewById(R.id.headPic);
         }
     }
 
-    public MsgAdapter(List<Msg> msgList) {
+    public MsgAdapter(List<Msg> msgList,int headPicId) {
+        this.headPicId=headPicId;
         mMsgList = msgList;
     }
 
@@ -45,6 +50,7 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Msg msg = mMsgList.get(position);
+        holder.headPic.setImageResource(headPicId);
         if (msg.getType() == Msg.TYPE_RECEIVED) {
             // 如果是收到的消息，则显示左边的消息布局，将右边的消息布局隐藏
             holder.leftLayout.setVisibility(View.VISIBLE);
