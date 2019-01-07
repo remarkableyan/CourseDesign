@@ -1,4 +1,4 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.yan.coursedesign.adapter.MsgAdapter;
+import com.example.yan.coursedesign.R;
+import com.example.yan.coursedesign.VO.Msg;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +41,11 @@ public class ChatActivity extends AppCompatActivity {
         headPic=intent.getIntExtra("headPic",R.mipmap.people1);
         initMsgs(); // 初始化消息数据
         backbtn=findViewById(R.id.backbtn);
-        inputText = (EditText) findViewById(R.id.input_text);
-        send = (Button) findViewById(R.id.send);
+        inputText =  findViewById(R.id.input_text);
+        send =  findViewById(R.id.send);
         TextView textView=findViewById(R.id.chatWith);
         textView.setText(name);
-        msgRecyclerView = (RecyclerView) findViewById(R.id.msg_recycler_view);
+        msgRecyclerView = findViewById(R.id.msg_recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         msgRecyclerView.setLayoutManager(layoutManager);
         adapter = new MsgAdapter(msgList,headPic);

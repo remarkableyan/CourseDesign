@@ -1,4 +1,4 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
+
+import com.example.yan.coursedesign.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

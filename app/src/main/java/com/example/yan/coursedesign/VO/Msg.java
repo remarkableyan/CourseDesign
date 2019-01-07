@@ -1,4 +1,4 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.VO;
 
 public class Msg {
 

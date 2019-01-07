@@ -1,8 +1,6 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -14,7 +12,10 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.yan.coursedesign.adapter.PeopleAdapter;
+import com.example.yan.coursedesign.R;
+import com.example.yan.coursedesign.VO.People;
+import com.example.yan.coursedesign.activity.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.List;

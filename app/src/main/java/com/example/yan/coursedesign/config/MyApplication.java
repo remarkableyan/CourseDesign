@@ -1,4 +1,4 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.config;
 
 import android.app.Application;
 import android.content.Context;

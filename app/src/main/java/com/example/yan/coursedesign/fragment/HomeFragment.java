@@ -1,8 +1,7 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,10 @@ import android.widget.Toast;
 
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
+import com.example.yan.coursedesign.adapter.ImgAdapter;
+import com.example.yan.coursedesign.config.MyApplication;
+import com.example.yan.coursedesign.R;
+import com.example.yan.coursedesign.VO.Img;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +43,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
                 Toast.makeText(MyApplication.getContext(), "更新成功!", Toast.LENGTH_SHORT).show();
-                imgs.add(new Img("new",R.mipmap.people2,R.mipmap.iu2));
-                homeList.setAdapter(imgAdapter);
+                imgs.add(0,new Img("new",R.mipmap.people2,R.mipmap.zdy));
+                imgAdapter.notifyDataSetChanged();
                 TimerTask timerTask=new TimerTask() {
                     @Override
                     public void run() {
@@ -62,8 +65,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MyApplication.getContext(), "添加成功!", Toast.LENGTH_LONG).show();
-                imgs.add(new Img("new",R.mipmap.people3,R.mipmap.iu2));
-                homeList.setAdapter(imgAdapter);
+                imgs.add(0,new Img("new",R.mipmap.people3,R.mipmap.iu2));
+                imgAdapter.notifyDataSetChanged();
             }
         });
         return view;

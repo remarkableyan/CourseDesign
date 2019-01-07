@@ -1,10 +1,13 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.activity;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.yan.coursedesign.adapter.MyPagerAdapter;
+import com.example.yan.coursedesign.R;
 
 import java.util.ArrayList;
 import java.util.List;

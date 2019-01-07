@@ -1,16 +1,18 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.yan.coursedesign.R;
+import com.example.yan.coursedesign.VO.Img;
+import com.example.yan.coursedesign.config.MyApplication;
+import com.example.yan.coursedesign.listener.OnDoubleClickListener;
 
 import java.util.List;
 
@@ -59,6 +61,16 @@ public class ImgAdapter extends ArrayAdapter<Img> {
         });
         headPic.setImageDrawable(MyApplication.getContext().getResources().getDrawable(people.getHeadPic()));
         imgContent.setImageDrawable(MyApplication.getContext().getResources().getDrawable(people.getImgContent()));
+        imgContent.setOnTouchListener(new OnDoubleClickListener(new OnDoubleClickListener.DoubleClickCallback() {
+            @Override
+            public void onDoubleClick() {
+                if(good.isSelected()){
+                    good.setSelected(false);
+                }else{
+                    good.setSelected(true);
+                }
+            }
+        }));
         return view;
     }
     class ViewHolder {

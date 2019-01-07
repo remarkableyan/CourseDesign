@@ -1,10 +1,13 @@
-package com.example.yan.coursedesign;
+package com.example.yan.coursedesign.adapter;
 
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.view.View;
+
+import com.example.yan.coursedesign.fragment.FriendsFragment;
+import com.example.yan.coursedesign.fragment.HomeFragment;
+import com.example.yan.coursedesign.fragment.MeFragment;
 
 import java.util.ArrayList;
 import java.util.List;
